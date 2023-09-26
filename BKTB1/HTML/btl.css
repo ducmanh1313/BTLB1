@@ -1,4 +1,10 @@
-/* Reset some default styles */
+.ready {
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    
+}
+
 
 ul {
     list-style-type: none;
@@ -6,7 +12,7 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    background-size: 2000px;
+    
   }
   
   li {
@@ -19,11 +25,65 @@ ul {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+
   }
   
   li a:hover:not(.active) {
     background-color: #111;
   }
+  header {
+    background-color: #5e1515;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
   
-  
+/* CSS cho hình ảnh và nút ấn */
+.image-container {
+    display: inline-block;
+    position: relative;
+}
 
+.image-container img {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt ra ngoài kích thước của .image-container */
+    width: 1000px; /* Đặt chiều rộng của hình ảnh theo nhu cầu */
+    height: auto; /* Chiều cao tự động điều chỉnh theo tỷ lệ gốc của hình ảnh */
+}
+
+.overlay-button {
+    position: absolute;
+
+    top: 75%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    background-color: #e4131d;
+    color: #0c0808;
+    padding: 20px 40px;
+    width: 200px;
+    height: 40px;
+    border: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1; 
+    text-decoration: none; 
+}
+.text-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color:white;
+    z-index: 2;
+   
+}
+
+.text-overlay h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.text-overlay p {
+    font-size: 30px;
+    margin: 0;
+    line-height: 1.5;
+}
