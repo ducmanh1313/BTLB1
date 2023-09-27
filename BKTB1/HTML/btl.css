@@ -1,22 +1,51 @@
+body {
+  background-color: #f0f0f0; /* Chọn màu xám tuỳ ý */
+  margin: 0; /* Xóa margin mặc định của body */
+  padding: 0; /* Xóa padding mặc định của body */
+}
+.box {
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  width: 50%; /* Giảm chiều rộng để cách lề bên trái và phải */
+  height: 2000px;
+  margin-top: 50px;
+  margin-left: auto; 
+  margin-right: auto;
+  background-color: white;
+}
+
+
+.box h1{
+  text-align: center;
+}
 .ready {
-    font-size: 30px;
+    font-size: 60px;
     text-align: center;
     padding: 10px;
     
 }
+.anh_bia{
+  padding-left: 200px;
+  padding-right: 300px;
 
+}
+li img{
+  border: 50px;
+width: 50px;
+height: auto;
+}
 
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: chocolate;
     
   }
   
   li {
-    float: left;
+    float:left  ;
   }
   
   li a {
@@ -25,18 +54,13 @@ ul {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-size: 50px;
 
   }
   
   li a:hover:not(.active) {
-    background-color: #111;
+    background-color: #a1801d;
   }
-  header {
-    background-color: #5e1515;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
   
 /* CSS cho hình ảnh và nút ấn */
 .image-container {
@@ -45,9 +69,11 @@ ul {
 }
 
 .image-container img {
-    max-width: 100%; /* Đảm bảo hình ảnh không vượt ra ngoài kích thước của .image-container */
-    width: 1000px; /* Đặt chiều rộng của hình ảnh theo nhu cầu */
-    height: auto; /* Chiều cao tự động điều chỉnh theo tỷ lệ gốc của hình ảnh */
+    max-width: 100%;
+    width: 1000px; 
+    height: auto; 
+    margin-left: auto;
+     margin-right: auto;
 }
 
 .overlay-button {
@@ -73,6 +99,7 @@ ul {
     left: 10px;
     color:white;
     z-index: 2;
+    padding-left: 30px;
    
 }
 
