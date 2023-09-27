@@ -2,19 +2,23 @@ body {
   background-color: #f0f0f0; /* Chọn màu xám tuỳ ý */
   margin: 0; /* Xóa margin mặc định của body */
   padding: 0; /* Xóa padding mặc định của body */
+  font-size: 30px;
 }
 .box {
   display: flex;
   justify-content: center; /* Căn giữa theo chiều ngang */
-  width: 50%; /* Giảm chiều rộng để cách lề bên trái và phải */
+  width: 65%; /* Giảm chiều rộng để cách lề bên trái và phải */
   height: 2000px;
-  margin-top: 50px;
+  margin-top: 25px;
   margin-left: auto; 
   margin-right: auto;
   background-color: white;
 }
 
 
+.box2{
+  position:sticky;
+}
 .box h1{
   text-align: center;
 }
@@ -34,27 +38,28 @@ li img{
 width: 50px;
 height: auto;
 }
+.tieu_de{
+  list-style-type: none;
+  margin: 0;
+  padding-left: 100px;
+  overflow: hidden;
+  background-color: chocolate;
+}
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: chocolate;
-    
-  }
   
-  li {
+ .tieu_de li {
     float:left  ;
+    list-style: none;
   }
   
-  li a {
+ .tieu_de li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 0px 50px;
     text-decoration: none;
     font-size: 50px;
+
 
   }
   
@@ -70,7 +75,7 @@ ul {
 
 .image-container img {
     max-width: 100%;
-    width: 1000px; 
+    width: 2000px; 
     height: auto; 
     margin-left: auto;
      margin-right: auto;
@@ -78,21 +83,24 @@ ul {
 
 .overlay-button {
     position: absolute;
-
-    top: 75%;
-    left: 25%;
+    font-size: 30px;
+    top: 80%;
+    left: 15%;
     transform: translate(-50%, -50%);
     background-color: #e4131d;
-    color: #0c0808;
+    color: #f4eeee;
     padding: 20px 40px;
-    width: 200px;
-    height: 40px;
+    width: 300px;
+    height: 100px;
     border: 40px;
     border-radius: 5px;
     cursor: pointer;
     z-index: 1; 
+    border-radius: 60%;
     text-decoration: none; 
+    transition: background-color 0.3s;
 }
+
 .text-overlay {
     position: absolute;
     top: 10px;
@@ -100,17 +108,35 @@ ul {
     color:white;
     z-index: 2;
     padding-left: 30px;
-   
+  padding-bottom: 50px;
 }
 
 .text-overlay h1 {
-    font-size: 50px;
+    font-size: 70px;
+    text-align: left;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-left: 25px;
+    margin-bottom: 30px;
+    margin-top: 25%;
 }
 
 .text-overlay p {
     font-size: 30px;
-    margin: 0;
+    margin: 30px;
     line-height: 1.5;
+}
+.overlay-button:hover {
+  background-color: #d7cbcb; /* Màu khi di chuột vào */
+}
+.chu{
+  font-size: 30px;
+  margin:20px 50px ;
+}
+.cautruc{
+  font-size: 45px;
+  font-weight: bold;
+  margin-left: 50px;
+}
+.cautruc1{
+  margin:20px 100px;
 }
