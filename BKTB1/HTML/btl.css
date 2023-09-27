@@ -8,7 +8,7 @@ body {
   display: flex;
   justify-content: center; /* Căn giữa theo chiều ngang */
   width: 65%; /* Giảm chiều rộng để cách lề bên trái và phải */
-  height: 2000px;
+  height: auto;
   margin-top: 25px;
   margin-left: auto; 
   margin-right: auto;
@@ -28,43 +28,78 @@ body {
     padding: 10px;
     
 }
-.anh_bia{
+.anh_bia {
   padding-left: 200px;
   padding-right: 300px;
-
+  text-align: left;
+  
+}
+.anh_bia a{
+    text-decoration: none;
+    color: white;
+}
+.anh_bia img{
+  width: 50px;
+  
 }
 li img{
-  border: 50px;
+  
 width: 50px;
 height: auto;
 }
-.tieu_de{
-  list-style-type: none;
-  margin: 0;
-  padding-left: 100px;
+.tieu_de {
   overflow: hidden;
   background-color: chocolate;
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
 }
 
   
- .tieu_de li {
-    float:left  ;
-    list-style: none;
-  }
-  
- .tieu_de li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 0px 50px;
-    text-decoration: none;
-    font-size: 50px;
+.tieu_de {
+  overflow: hidden;
+  background-color: chocolate;
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.tieu_de h1 {
+  flex: 1; /* Chia không gian còn lại */
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  margin: 0;
+}
+
+.tieu_de ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  display: flex;
+}
 
 
-  }
+.tieu_de li a {
+  display: block;
+  text-decoration: none; /* Loại bỏ gạch chân */
+  color: #ffffff; /* Đặt màu chữ là trắng */
+  font-weight: bold; /* Đặt độ đậm cho chữ */
+  display: flex;
+  padding: 0px 50px;
+}
+
+.tieu_de li a:hover {
+  text-decoration: underline; /* Thêm gạch chân khi di chuột vào */
+  color: #a1801d; /* Đổi màu chữ khi di chuột vào */
+}
+
+.tieu_de li:last-child {
+  margin-right: 0; /* Loại bỏ khoảng cách ở mục cuối cùng */
+}
+
   
   li a:hover:not(.active) {
     background-color: #a1801d;
+    
   }
   
 /* CSS cho hình ảnh và nút ấn */
