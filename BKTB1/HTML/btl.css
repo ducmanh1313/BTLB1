@@ -1,0 +1,177 @@
+body {
+  background-color: #f0f0f0; /* Chọn màu xám tuỳ ý */
+  margin: 0; /* Xóa margin mặc định của body */
+  padding: 0; /* Xóa padding mặc định của body */
+  font-size: 30px;
+}
+.box {
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  width: 65%; /* Giảm chiều rộng để cách lề bên trái và phải */
+  height: auto;
+  margin-top: 25px;
+  margin-left: auto; 
+  margin-right: auto;
+  background-color: white;
+}
+
+
+.box2{
+  position:sticky;
+}
+.box h1{
+  text-align: center;
+}
+.ready {
+    font-size: 60px;
+    text-align: center;
+    padding: 10px;
+    
+}
+.anh_bia {
+  padding-left: 200px;
+  padding-right: 300px;
+  text-align: left;
+  
+}
+.anh_bia a{
+    text-decoration: none;
+    color: white;
+}
+.anh_bia img{
+  width: 50px;
+  
+}
+li img{
+  
+width: 50px;
+height: auto;
+}
+.tieu_de {
+  overflow: hidden;
+  background-color: chocolate;
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+  
+.tieu_de {
+  overflow: hidden;
+  background-color: chocolate;
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.tieu_de h1 {
+  flex: 1; /* Chia không gian còn lại */
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  margin: 0;
+}
+
+.tieu_de ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  display: flex;
+}
+
+
+.tieu_de li a {
+  display: block;
+  text-decoration: none; /* Loại bỏ gạch chân */
+  color: #ffffff; /* Đặt màu chữ là trắng */
+  font-weight: bold; /* Đặt độ đậm cho chữ */
+  display: flex;
+  padding: 0px 50px;
+}
+
+.tieu_de li a:hover {
+  text-decoration: underline; /* Thêm gạch chân khi di chuột vào */
+  color: #a1801d; /* Đổi màu chữ khi di chuột vào */
+}
+
+.tieu_de li:last-child {
+  margin-right: 0; /* Loại bỏ khoảng cách ở mục cuối cùng */
+}
+
+  
+  li a:hover:not(.active) {
+    background-color: #a1801d;
+    
+  }
+  
+/* CSS cho hình ảnh và nút ấn */
+.image-container {
+    display: inline-block;
+    position: relative;
+}
+
+.image-container img {
+    max-width: 100%;
+    width: 2000px; 
+    height: auto; 
+    margin-left: auto;
+     margin-right: auto;
+}
+
+.overlay-button {
+    position: absolute;
+    font-size: 30px;
+    top: 80%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    background-color: #e4131d;
+    color: #f4eeee;
+    padding: 20px 40px;
+    width: 300px;
+    height: 100px;
+    border: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1; 
+    border-radius: 60%;
+    text-decoration: none; 
+    transition: background-color 0.3s;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color:white;
+    z-index: 2;
+    padding-left: 30px;
+  padding-bottom: 50px;
+}
+
+.text-overlay h1 {
+    font-size: 70px;
+    text-align: left;
+    font-weight: bold;
+    margin-left: 25px;
+    margin-bottom: 30px;
+    margin-top: 25%;
+}
+
+.text-overlay p {
+    font-size: 30px;
+    margin: 30px;
+    line-height: 1.5;
+}
+.overlay-button:hover {
+  background-color: #d7cbcb; /* Màu khi di chuột vào */
+}
+.chu{
+  font-size: 30px;
+  margin:20px 50px ;
+}
+.cautruc{
+  font-size: 45px;
+  font-weight: bold;
+  margin-left: 50px;
+}
+.cautruc1{
+  margin:20px 100px;
+}
