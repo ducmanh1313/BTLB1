@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    ob_start();
+    if(isset($_SESSION['role']) && ($_SESSION['role'] == 1)){
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,6 +70,12 @@
 	</div>
 </body>
 </html>
+<?php
+    } else {
+        header('location: login.php');
+        exit; // Thêm exit để ngăn chặn mã tiếp tục chạy sau khi chuyển hướng
+    }
+?>
 <?php include('mdlQuestion.php')?>
 <script type="text/javascript">
 	var page = 1;

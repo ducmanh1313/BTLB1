@@ -4,48 +4,107 @@
   <meta charset="utf-8">
   <title>Làm bài thi trắc nghiệm</title>
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-
+  <link rel="stylesheet" href="css/index.css">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- Các script khác -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
+
+  <div id="header">
+      <ul id="left-nav">
+        <li><a href="index.php">Làm bài thi</a></li>
+        <li><a href="#">Lịch sử thi</a></li>
+        <li><a href="introduction.php">Giới thiệu</a></li>
+      </ul>
+      <ul id="right-nav">
+      <li><a href="#">Đăng nhập</a></li>
+        <li><a href="#">Đăng ký</a></li>
+        <!-- <li><a href="#"></a></li> -->
+      </ul>
+  </div>
+  <!-- <div id="slider">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="slide1.png" alt="Slide 1"></div>
+      <div class="swiper-slide"><img src="slide2.jpg" alt="Slide 2"></div>
+      <div class="swiper-slide"><img src="slide3.jpg" alt="Slide 3"></div>
+      Thêm các slide khác nếu cần
+    </div>
+    </div>
+  </div> -->
+
+
   <div class="container">
     <div class="panel-group">
-
-      <div class="panel panel-primary">
-        <div class="panel-heading">Làm bài thi</div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-12 text-right">
-              <button type="button" name="button" class="btn btn-success" id="btnStart">Bắt đầu</button>
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-12 text-center welcome-section">
+                        <h3>Chào mừng bạn đến với bài thi!</h3>
+                        <p>Nhấn nút "Bắt đầu" để bắt đầu làm bài kiểm tra.</p>                   
+                        <button type="button" name="button" class="btn btn-success" id="btnStart">Làm ngay</button>
+                    </div>
+                <div id="questions"></div>
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <button type="button" class="btn btn-warning" id="btnFinish">Kết thúc bài thi</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h4 id='mark' class="text-info"></h4>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div id="questions"> </div>
-          <div class="row">
-            <div class="col-sm-12 text-center">
-              <button type="button" class="btn btn-warning" id="btnFinish">Kết thúc bài thi</button>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12 text-center">
-              <h4 id='mark' class = "text-info"></h4>
-            </div>
-          </div>
         </div>
-      </div>
-
     </div>
+</div>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <p>Công ty TNHH 1 thành viên Vũ Đức Mạnh</p>
+                <p>Email: Manhblack302g@gmail.com</p>
+                <p>Trụ sở: B270 Tô Ký, Tổ 6, Khu phố 3, Hoàng Mai, Hà Nội.</p>
+                <p>Mã số doanh nghiệp: 0315532495 cấp ngày 28/02/2019.</p>
+                <p>Nơi cấp: TRƯỜNG ĐẠI HỌC MỎ-ĐỊA CHẤT</p>
+                <p>&copy; VietNam High IQ Society. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
   </div>
 </body>
 </html>
 
 <script type="text/javascript">
+ 
+    // Khởi tạo Swiper với autoplay
+    var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 3000, // Thời gian chuyển đổi giữa các slide, tính bằng mili giây (ở đây là 3 giây)
+      disableOnInteraction: false, // Tạm ngưng autoplay khi người dùng tương tác với slide
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
 $(document).ready(function(){
   $('#btnFinish').hide();
 });
@@ -54,6 +113,7 @@ $('#btnStart').click(function(){
   GetQuestions();
   $('#btnFinish').show();
   $(this).hide();
+   $('.welcome-section').hide();
 });
 
 $('#btnFinish').click(function(){
@@ -122,6 +182,7 @@ function GetQuestions(){
         index++;
       });
       $('#questions').html(d);
+      
     }
   });
 }
