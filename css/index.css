@@ -1,85 +1,145 @@
-#header {
-    display: flex; /* Sử dụng flexbox */
-    justify-content: space-between; /* Các phần tử con sẽ được căn cách đều 2 bên */
-    align-items: center; /* Căn dọc các phần tử con vào giữa */
-    background-color: #333;
-    color: #fff;
-    padding: 15px 20px; /* Khoảng cách padding */
-  }
-  
-  #left-nav, #right-nav {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex; /* Hiển thị các mục con theo chiều ngang */
-  }
-  
-  #right-nav {
-    justify-content: flex-end; /* Căn các mục con về phía bên phải */
-  }
-  
-  #left-nav li, #right-nav li {
-    margin-right: 20px;
-  }
-  
-  #left-nav li:last-child, #right-nav li:last-child {
-    margin-right: 0; /* Loại bỏ margin phải của mục cuối cùng */
-  }
-  
-  #left-nav li a, #right-nav li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  #left-nav li a:hover, #right-nav li a:hover {
-    color: #ffd700;
-  }
- /* Thiết lập phần footer ở cuối trang */
-
-  .footer {
-    position:static;
-    bottom: 0;
-    width: 100%;
-    background-color: #f8f9fa; /* Màu nền footer, thay đổi theo ý muốn */
-    text-align: center; /* Căn giữa nội dung trong footer */
-    padding: 10px 0; /* Padding để tạo khoảng cách giữa nội dung và mép footer */
-  }
-/* Ẩn thông báo chào mừng ban đầu */
+/* Đặt nền chung cho body */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-}
-
-.containers {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.intro {
-  margin-bottom: 30px;
-}
-
-.important-of-learning h2 {
+  background-color: #f7f7f7;
   color: #333;
 }
 
-.important-of-learning p {
-  color: #666;
-  line-height: 1.6;
+/* Định kiểu cho header */
+#header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
 }
 
-.website-introduction h2 {
-  color: #0066cc;
+#left-nav,
+#right-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
-.website-introduction p {
-  color: #444;
-  line-height: 1.6;
+#right-nav {
+  justify-content: flex-end;
+}
+
+#left-nav li,
+#right-nav li {
+  margin-right: 20px;
+}
+
+#left-nav li:last-child,
+#right-nav li:last-child {
+  margin-right: 0;
+}
+
+#left-nav li a,
+#right-nav li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+/* Định kiểu cho navigation */
+#left-nav,
+#right-nav {
+  list-style: none;
+  padding: 0;
+}
+
+#left-nav li,
+#right-nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+#left-nav li a,
+#right-nav li a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+#left-nav li a:hover,
+#right-nav li a:hover {
+  color: #23527c;
+}
+
+/* Định kiểu cho nội dung chính */
+.container {
+  padding: 30px;
+}
+
+.panel-primary {
+  border-color: #337ab7;
+}
+
+.panel-primary .panel-body {
+  background-color: #e6f2ff;
+  border: 1px solid #d9edf7;
+  border-radius: 3px;
+}
+
+.welcome-section h3 {
+  color: #337ab7;
+}
+
+/* Các nút điều khiển */
+.btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 2px;
+  text-shadow: none;
+  outline: none;
+  border: none;
+}
+
+.btn-success {
+  background-color: #5cb85c;
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color: #4cae4c;
+}
+
+.btn-warning {
+  background-color: #f0ad4e;
+  color: #fff;
+}
+
+.btn-warning:hover {
+  background-color: #ec971f;
+}
+
+.text-info {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+/* Tùy chỉnh cho swiper nếu bạn kích hoạt lại */
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
 }

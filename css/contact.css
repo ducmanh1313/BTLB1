@@ -1,0 +1,133 @@
+
+  /* Thay đổi màu sắc và font chữ */
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+
+/* Định kiểu cho header */
+#header {
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+#left-nav,
+#right-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#right-nav {
+  justify-content: flex-end;
+}
+
+#left-nav li,
+#right-nav li {
+  margin-right: 20px;
+}
+
+#left-nav li:last-child,
+#right-nav li:last-child {
+  margin-right: 0;
+}
+
+#left-nav li a,
+#right-nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+/* Định kiểu cho navigation */
+#left-nav,
+#right-nav {
+  list-style: none;
+  padding: 0;
+}
+
+#left-nav li,
+#right-nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+#left-nav li a,
+#right-nav li a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+#left-nav li a:hover,
+#right-nav li a:hover {
+  color: #23527c;
+}
+
+
+  /* Định dạng cho phần liên hệ */
+  .ab-info-main {
+    background-color: #f4f4f4;
+    padding: 60px 0;
+  }
+
+  .tittle {
+    color: #333;
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+  .contact-right-content input,
+  .contact-right-content textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .contact-right-content textarea {
+    resize: vertical;
+    height: 150px;
+  }
+
+  .contact-right-content input[type='submit'] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .contact-right-content input[type='submit']:hover {
+    background-color: #555;
+  }
+
+  .contact-left-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .address-con h4 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .address-con p {
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .fa {
+    margin-right: 10px;
+  }
+

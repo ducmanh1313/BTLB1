@@ -10,7 +10,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="css/index.css">
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
 	<!-- Latest compiled and minified CSS -->
@@ -59,9 +59,9 @@
 		  <thead>
 		    <tr>
 
-		      <th scope="col">#</th>
+		      <th scope="col">STT</th>
 		      <th scope="col">Câu hỏi</th>
-		      <th scope="col"></th>
+		      <th scope="col">Chức Năng</th>
 		    </tr>
 		  </thead>
 		  <tbody id="questions">     
@@ -95,7 +95,7 @@
 		$('#txaOptionC').val('');
 		$('#txaOptionD').val('');
 
-		//reset lại giá trị cho các radio button --> không chọn thằng nào hết
+		//reset lại giá trị cho các radio button --> không chọn cái nào hết
         $('#rdOptionA').prop('checked',false);
         $('#rdOptionB').prop('checked',false);
         $('#rdOptionC').prop('checked',false);

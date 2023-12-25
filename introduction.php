@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Giới thiệu</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <div id="header">
+  <div id="header">
       <ul id="left-nav">
         <li><a href="index.php">Làm bài thi</a></li>
         <li><a href="#">Lịch sử thi</a></li>
-        <li><a href="introduction.php">Giới thiệu</a></li>
+       
       </ul>
       <ul id="right-nav">
-      <li><a href="#">Đăng nhập</a></li>
-        <li><a href="#">Đăng ký</a></li>
-        
+       <li><a href="contact.php">Liên hệ</a></li>
+       <li><a href="login.php">Thoát</a></li>
       </ul>
-  </div>
+  </div>  
   <div class="containers">
     <div class="intro important-of-learning">
       <h2>Sự quan trọng của học</h2>
@@ -29,14 +28,15 @@
       <h2>Giới thiệu về trang web làm bài thi</h2>
       <p>Trang web này được tạo ra với mục tiêu cung cấp môi trường thực hành và kiểm tra kiến thức thông qua các bài thi trắc nghiệm đa dạng. Chúng tôi cung cấp các câu hỏi từ nhiều lĩnh vực khác nhau, từ khoa học đến văn hóa, từ lịch sử đến công nghệ, để giúp mọi người củng cố và mở rộng kiến thức của mình.</p>
     </div>
+    <img src="img/lamngay.jpg" alt="" >
   </div>
-
+      
   <footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
                 <p>Công ty TNHH 1 thành viên Vũ Đức Mạnh</p>
-                <p>Email: Manhblack302g@gmail.com</p>
+                <p>Email: Manhblack302@gmail.com</p>
                 <p>Trụ sở: B270 Tô Ký, Tổ 6, Khu phố 3, Hoàng Mai, Hà Nội.</p>
                 <p>Mã số doanh nghiệp: 0315532495 cấp ngày 28/02/2019.</p>
                 <p>Nơi cấp: TRƯỜNG ĐẠI HỌC MỎ-ĐỊA CHẤT</p>

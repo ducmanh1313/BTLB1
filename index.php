@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+// Kiểm tra xem người dùng đã đăng nhập hay chưa
+if (!isset($_SESSION['username'])) {
+  // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
+  header('Location: login.php');
+  exit();
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -23,12 +37,11 @@
       <ul id="left-nav">
         <li><a href="index.php">Làm bài thi</a></li>
         <li><a href="#">Lịch sử thi</a></li>
-        <li><a href="introduction.php">Giới thiệu</a></li>
+
       </ul>
       <ul id="right-nav">
-      <li><a href="#">Đăng nhập</a></li>
-        <li><a href="#">Đăng ký</a></li>
-        <!-- <li><a href="#"></a></li> -->
+       <li><a href="contact.php">Liên hệ</a></li>
+       <li><a href="login.php">Thoát</a></li>
       </ul>
   </div>
   <!-- <div id="slider">
@@ -70,20 +83,7 @@
 </div>
 
 
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <p>Công ty TNHH 1 thành viên Vũ Đức Mạnh</p>
-                <p>Email: Manhblack302g@gmail.com</p>
-                <p>Trụ sở: B270 Tô Ký, Tổ 6, Khu phố 3, Hoàng Mai, Hà Nội.</p>
-                <p>Mã số doanh nghiệp: 0315532495 cấp ngày 28/02/2019.</p>
-                <p>Nơi cấp: TRƯỜNG ĐẠI HỌC MỎ-ĐỊA CHẤT</p>
-                <p>&copy; VietNam High IQ Society. All rights reserved.</p>
-            </div>
-        </div>
-    </div>
-</footer>
+  
 
   </div>
 </body>
