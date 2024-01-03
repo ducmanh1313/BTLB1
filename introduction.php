@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giới thiệu</title>
     <link rel="stylesheet" href="css/index.css">
+    <style></style>
 </head>
 <body>
   <div id="header">
       <ul id="left-nav">
         <li><a href="index.php">Làm bài thi</a></li>
-        <li><a href="#">Lịch sử thi</a></li>
+        
        
       </ul>
       <ul id="right-nav">
        <li><a href="contact.php">Liên hệ</a></li>
-       <li><a href="login.php">Thoát</a></li>
+       <li><a href="login.php">Đăng xuất</a></li>
       </ul>
   </div>  
   <div class="containers">

@@ -36,12 +36,12 @@ if (!isset($_SESSION['username'])) {
   <div id="header">
       <ul id="left-nav">
         <li><a href="index.php">Làm bài thi</a></li>
-        <li><a href="#">Lịch sử thi</a></li>
+        
 
       </ul>
       <ul id="right-nav">
        <li><a href="contact.php">Liên hệ</a></li>
-       <li><a href="login.php">Thoát</a></li>
+       <li><a href="session.php">Đăng xuất</a></li>
       </ul>
   </div>
   <!-- <div id="slider">

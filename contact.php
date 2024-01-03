@@ -28,7 +28,7 @@
       </ul>
       <ul id="right-nav">
        <li><a href="contact.php">Liên hệ</a></li>
-       <li><a href="login.php">Thoát</a></li>
+       <li><a href="session.php">Thoát</a></li>
       </ul>
   </div>
   </div>
