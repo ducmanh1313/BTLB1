@@ -65,6 +65,7 @@ if (!isset($_SESSION['username'])) {
                         <h3>Chào mừng bạn đến với bài thi!</h3>
                         <p>Nhấn nút "Bắt đầu" để bắt đầu làm bài kiểm tra.</p>                   
                         <button type="button" name="button" class="btn btn-success" id="btnStart">Làm ngay</button>
+                        <p id="countdown"></p>
                     </div>
                 <div id="questions"></div>
                 <div class="row">
@@ -185,5 +186,43 @@ function GetQuestions(){
       
     }
   });
+}
+let timeLeft = 15 * 60; // Thời gian bắt đầu làm bài (15 phút)
+let timerInterval;
+
+document.getElementById('btnStart').addEventListener('click', function() {
+  timerInterval = setInterval(updateTimer, 1000);
+  this.style.display = 'none';
+  document.getElementById('btnFinish').style.display = 'block';
+  document.getElementById('welcomeSection').style.display = 'none'; // Ẩn phần chào mừng khi bắt đầu làm bài
+  document.getElementById('countdown').style.display = 'block'; // Hiển thị thời gian đếm ngược khi bắt đầu làm bài
+});
+
+document.getElementById('btnFinish').addEventListener('click', function() {
+  clearInterval(timerInterval); // Dừng đếm ngược nếu người dùng tự nộp bài
+  checkAndSubmit(); // Kiểm tra và nộp bài
+});
+
+function updateTimer() {
+  const minutes = Math.floor(timeLeft / 60);
+  let seconds = timeLeft % 60;
+
+  // Format thời gian còn lại
+  let timeString = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+  // Hiển thị thời gian đếm ngược
+  document.getElementById('countdown').innerText = `Thời gian còn lại: ${timeString}`;
+
+  if (timeLeft > 0) {
+    timeLeft--;
+  } else {
+    clearInterval(timerInterval);
+    checkAndSubmit();
+  }
+}
+
+function checkAndSubmit() {
+  // Xử lý nộp bài ở đây
+  alert('Bài đã được nộp!');
 }
 </script>
