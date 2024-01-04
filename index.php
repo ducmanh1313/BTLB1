@@ -44,32 +44,23 @@ if (!isset($_SESSION['username'])) {
        <li><a href="session.php">Đăng xuất</a></li>
       </ul>
   </div>
-  <!-- <div id="slider">
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="slide1.png" alt="Slide 1"></div>
-      <div class="swiper-slide"><img src="slide2.jpg" alt="Slide 2"></div>
-      <div class="swiper-slide"><img src="slide3.jpg" alt="Slide 3"></div>
-      Thêm các slide khác nếu cần
-    </div>
-    </div>
-  </div> -->
-
 
   <div class="container">
     <div class="panel-group">
         <div class="panel panel-primary">
             <div class="panel-body">
+            <form id="examForm" action="" method="post">
                 <div class="row">
                     <div class="col-sm-12 text-center welcome-section">
                         <h3>Chào mừng bạn đến với bài thi!</h3>
                         <p>Nhấn nút "Bắt đầu" để bắt đầu làm bài kiểm tra.</p>                   
                         <button type="button" name="button" class="btn btn-success" id="btnStart">Làm ngay</button>
-                        <p id="countdown"></p>
                     </div>
                 <div id="questions"></div>
                 <div class="row">
                     <div class="col-sm-12 text-center">
+                    <div><span id="display" style="color:#FF0000;font-size:15px"></span></div>
+                    <div><span id="submitted" style="color:#FF0000;font-size:15px"></span></div>
                         <button type="button" class="btn btn-warning" id="btnFinish">Kết thúc bài thi</button>
                     </div>
                 </div>
@@ -78,6 +69,7 @@ if (!isset($_SESSION['username'])) {
                         <h4 id='mark' class="text-info"></h4>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>
@@ -91,23 +83,38 @@ if (!isset($_SESSION['username'])) {
 </html>
 
 <script type="text/javascript">
- 
-    // Khởi tạo Swiper với autoplay
-    var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-      delay: 3000, // Thời gian chuyển đổi giữa các slide, tính bằng mili giây (ở đây là 3 giây)
-      disableOnInteraction: false, // Tạm ngưng autoplay khi người dùng tương tác với slide
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  });
+  var countdownInterval; // Global variable for the interval
+var timeDuration = 10;
+ function startCountdown(duration, display) {
+    var timer = duration, minutes, seconds;
+    var countdownInterval = setInterval(function () {
+      minutes = parseInt(timer / 60, 10);
+      seconds = parseInt(timer % 60, 10);
+
+      minutes = (minutes < 10) ? "0" + minutes : minutes;
+      seconds = (seconds < 10) ? "0" + seconds : seconds;
+      display.html("<b>" + minutes + "m : " + seconds + "s" + "</b>");
+      
+      if (timer <= 0) {
+        clearInterval(countdownInterval);
+        finishExam();
+      } else {
+        timer--;
+      }
+    }, 1000);
+  }
+
+  function finishExam() {
+    $('#submitted').text("Hết giờ!");
+    clearInterval(countdownInterval);
+    $('#btnFinish').hide(); // Ẩn nút hoàn thành nếu muốn
+    $('#btnFinish').trigger('click'); // Mô phỏng sự kiện click của nút "Kết thúc bài thi"
+}
+
+
 $(document).ready(function(){
   $('#btnFinish').hide();
+ 
 });
 var questions;//biến toàn cục để lưu danh sách câu hỏi
 $('#btnStart').click(function(){
@@ -115,12 +122,14 @@ $('#btnStart').click(function(){
   $('#btnFinish').show();
   $(this).hide();
    $('.welcome-section').hide();
+   startCountdown(timeDuration, $('#display'));
 });
 
 $('#btnFinish').click(function(){
   $(this).hide();
   $('#btnStart').show();
   CheckResult();
+  finishExam();
 });
 
 function CheckResult(){
@@ -187,42 +196,5 @@ function GetQuestions(){
     }
   });
 }
-let timeLeft = 15 * 60; // Thời gian bắt đầu làm bài (15 phút)
-let timerInterval;
 
-document.getElementById('btnStart').addEventListener('click', function() {
-  timerInterval = setInterval(updateTimer, 1000);
-  this.style.display = 'none';
-  document.getElementById('btnFinish').style.display = 'block';
-  document.getElementById('welcomeSection').style.display = 'none'; // Ẩn phần chào mừng khi bắt đầu làm bài
-  document.getElementById('countdown').style.display = 'block'; // Hiển thị thời gian đếm ngược khi bắt đầu làm bài
-});
-
-document.getElementById('btnFinish').addEventListener('click', function() {
-  clearInterval(timerInterval); // Dừng đếm ngược nếu người dùng tự nộp bài
-  checkAndSubmit(); // Kiểm tra và nộp bài
-});
-
-function updateTimer() {
-  const minutes = Math.floor(timeLeft / 60);
-  let seconds = timeLeft % 60;
-
-  // Format thời gian còn lại
-  let timeString = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-
-  // Hiển thị thời gian đếm ngược
-  document.getElementById('countdown').innerText = `Thời gian còn lại: ${timeString}`;
-
-  if (timeLeft > 0) {
-    timeLeft--;
-  } else {
-    clearInterval(timerInterval);
-    checkAndSubmit();
-  }
-}
-
-function checkAndSubmit() {
-  // Xử lý nộp bài ở đây
-  alert('Bài đã được nộp!');
-}
 </script>
