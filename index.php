@@ -36,7 +36,7 @@ if (!isset($_SESSION['username'])) {
   <div id="header">
       <ul id="left-nav">
         <li><a href="index.php">Làm bài thi</a></li>
-        
+        <li><a href="history.php">Lịch sử thi</a></li>
 
       </ul>
       <ul id="right-nav">
@@ -129,9 +129,26 @@ $('#btnFinish').click(function(){
   $(this).hide();
   $('#btnStart').show();
   CheckResult();
+  // Lấy điểm số từ phần hiển thị điểm
+  let mark = $('#mark').text().replace('Điểm của bạn là: ', '');
+  // Gửi điểm số lên server để lưu vào cơ sở dữ liệu
+  saveScore(mark);
   finishExam();
-});
 
+});
+function saveScore(mark) {
+  $.ajax({
+    url: 'save_score.php', // Tệp PHP để xử lý lưu điểm số
+    type: 'post',
+    data: { mark: mark }, // Gửi điểm số lên server
+    success: function(response) {
+      console.log('Điểm số đã được lưu vào cơ sở dữ liệu.');
+    },
+    error: function(error) {
+      console.error('Đã xảy ra lỗi khi lưu điểm số: ' + error);
+    }
+  });
+}
 function CheckResult(){
   let mark = 0;
   $('#questions div.row').each(function(k,v){

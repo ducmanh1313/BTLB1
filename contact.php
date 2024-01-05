@@ -23,7 +23,7 @@
   <div id="header">
       <ul id="left-nav">
         <li><a href="index.php">Làm bài thi</a></li>
-        <li><a href="#">Lịch sử thi</a></li>
+        <li><a href="history.php">Lịch sử thi</a></li>
        
       </ul>
       <ul id="right-nav">
