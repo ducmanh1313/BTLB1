@@ -27,6 +27,7 @@ if ($result) {
 <html>
 <head>
     <title>Trang quản lý tài khoản</title>
+    <link rel="stylesheet" href="css/index.css">
     <!-- Gọi các file CSS và JS của Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -34,7 +35,8 @@ if ($result) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<a class="quanly" href="users.php">Bảng quảng lý người dùng</a>
+<a class="quanly" href="index.php">bảng quản lý câu hỏi</a>
 <div class="container">
     <h1 class="mt-4">Bảng quản lý tài khoản người dùng</h1>
 

@@ -58,3 +58,37 @@
       border-radius: 4px;
       color: white 
   }
+  .quanly {
+    display: inline-block;
+    position: relative;
+    padding: 8px 20px;
+    color: #fff;
+    text-decoration: none; /* Loại bỏ gạch chân dưới liên kết */
+    margin: 10px;
+    transition: color 0.3s, background-color 0.3s;
+    background-color: #4CAF50;
+  }
+  
+  .quanly::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #4CAF50;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    z-index: -1;
+    transition: background-color 0.3s;
+  }
+  
+  .quanly:hover {
+    color: #fff; /* Màu chữ khi di chuột vào */
+    background-color: #3e8e41;
+    text-decoration: none; /* Loại bỏ gạch chân khi di chuột vào */
+  }
+  
+  .quanly:hover::before {
+    background-color: #3e8e41;
+  }
+  
